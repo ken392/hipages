@@ -8,12 +8,17 @@ docker-compose up -d
 ```
 
 2. Run Server
-- You can run it on dokcer or local (but need npm i)
-- For making sure the server is running, please access http://localhost:8080/jobs
+- Please run the server on your local machine
+Prism is not working on the image. (I can fix it but need research)
+```log
+2023-11-19 05:09:12 PrismaClientInitializationError: Prisma Client could not locate the Query Engine for runtime "linux-musl-arm64-openssl-3.0.x".
+2023-11-19 05:09:12 This happened because Prisma Client was generated for "darwin-arm64", but the actual deployment required "linux-musl-arm64-openssl-3.0.x".
+```
 ```bash
 cd server
-npm run dev
+npm run dev  (or npm start)
 ```
+- Please access http://localhost:8080/jobs
 
 3. Run UI
 ```bash
@@ -60,7 +65,6 @@ npm i @mui/material @emotion/react @emotion/styled @fontsource/roboto @mui/icons
 npm i 'jest@^28.0.0' 'ts-jest@^28.0.0' '@types/jest@^28.0.0'
 ```
 
-
 ### Server
 1. Install prisma to access the prepared database (mysql)
 ```bash
@@ -89,4 +93,3 @@ c) Similar design of the assessment request
 > To make is easy to maintain the source codes, the most of components needs to be design "small" and "loose coupling" and "easier to be unit tested"
 That's the reason to make many files in the UI folder
 
-## Test

@@ -5,9 +5,9 @@ services:
     entrypoint: ["npm", "start"]
     environment:
       NODE_ENV: development
-    image: node:18.18-alpine
+    image: node:18-alpine
     ports:
-      - "3001:3000"
+      - "3000:3000"
     volumes:
       - ./ui:/opt/ui
     working_dir: /opt/ui
@@ -16,7 +16,7 @@ services:
     entrypoint: ["npm", "start"]
     environment:
       NODE_ENV: development
-    image: node:10.15-alpine
+    image: node:18-alpine
     links:
       - database:database
     ports:
